@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Git\\cpp_folder\\lesson2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{661EB375-D84E-45AB-ADA3-CC3ABE3FCB73}|lesson2.vcxproj|E:\\Git\\cpp_folder\\lesson2\\lesson2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{661EB375-D84E-45AB-ADA3-CC3ABE3FCB73}|lesson2.vcxproj|solutionrelative:lesson2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lesson2.cpp",
+              "DocumentMoniker": "E:\\Git\\cpp_folder\\lesson2\\lesson2.cpp",
+              "RelativeDocumentMoniker": "lesson2.cpp",
+              "ToolTip": "E:\\Git\\cpp_folder\\lesson2\\lesson2.cpp",
+              "RelativeToolTip": "lesson2.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE8AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-09T12:39:29.982Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
