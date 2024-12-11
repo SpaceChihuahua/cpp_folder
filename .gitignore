@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+#pdb files
+*.pdb
+
+lesson*/x64/Debug
+lesson*/lesson*
