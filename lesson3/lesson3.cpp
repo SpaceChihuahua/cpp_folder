@@ -1,19 +1,23 @@
 #include <iostream>
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 int main()
 {
     //First task
-    int Time = 0;
-    int Hours = 0;
-    int Minutes = 0;
-    int Seconds = 0;
+    unsigned Time = 0;
+    unsigned Hours = 0;
+    unsigned Minutes = 0;
+    unsigned Seconds = 0;
+    const unsigned SecondsPerMinute = 60;
+    const unsigned MinutesPerHour = 60;
+    const unsigned SecondsPerHour = SecondsPerMinute * MinutesPerHour;
     std::cout << "Enter how many time you spent in game in seconds: ";
     std::cin >> Time;
 
-    Hours = Time / 3600;
-    Minutes = (Time % 3600) / 60;
-    Seconds = (Time % 3600) % 60;
+    Hours = Time / SecondsPerHour;
+    Minutes = (Time % SecondsPerHour) / SecondsPerMinute;
+    Seconds = (Time % SecondsPerHour) % SecondsPerMinute;
     std::cout << "You spent in game: " << Hours << " hours " << Minutes << " minutes " << Seconds << " seconds " << std::endl;
 
     //second task
@@ -49,8 +53,8 @@ int main()
     std::cout << "First number is smaller than second, or equal to it: " << std::boolalpha << lessOrEqual << std::endl;
 
     //fourth task
-    int Width = 0;
-    int Height = 0;
+    float Width = 0.f;
+    float Height = 0.f;
 
     std::cout << "Enter rectangle's width and height: \n";
     std::cout << "Width: ";
@@ -72,13 +76,13 @@ int main()
     }
 
     //fifth task
-    double pi = 2 * acos(0.0);
     float Radius = 0.f;
 
     std::cout << "Enter circle's radius: \n";
     std::cin >> Radius;
     Radius = fabs(Radius);
-    std::cout << "Circle radius is: " << pi * pow(Radius, 2) << std::endl;
+    std::cout << "Circle area is: " << M_PI * pow(Radius, 2) << std::endl;
+    std::cout << "Circle circumference is: " << 2 * M_PI * Radius << std::endl;
 
     return 0;
 }
