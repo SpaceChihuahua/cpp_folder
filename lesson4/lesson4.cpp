@@ -47,10 +47,20 @@ int main()
     float FirstAngle = 0.f;
     float SecondAngle = 0.f;
     float ThirdAngle = 0.f;
-    std::cout << "Enter values for a triangle angles: \n";
-    std::cin >> FirstAngle;
-    std::cin >> SecondAngle;
-    std::cin >> ThirdAngle;
+
+    while (FirstAngle == 0.f || SecondAngle == 0.f || ThirdAngle == 0.f)
+    {
+        std::cout << "Enter values for a triangle angles: \n";
+        std::cin >> FirstAngle;
+        std::cin >> SecondAngle;
+        std::cin >> ThirdAngle;
+    }
+
+    FirstAngle = fabs(FirstAngle);
+    SecondAngle = fabs(SecondAngle);
+    ThirdAngle = fabs(ThirdAngle);
+
+
 
     if ( FirstAngle + SecondAngle + ThirdAngle == 180)
     {
@@ -77,15 +87,15 @@ int main()
     }
     else if (MonthNumber == 3 || MonthNumber == 4 || MonthNumber == 5)
     {
-        std::cout << "Spring";
+        std::cout << "Spring \n";
     }
     else if (MonthNumber == 6 || MonthNumber == 7 || MonthNumber == 8)
     {
-        std::cout << "Summer";
+        std::cout << "Summer \n";
     }
     else if (MonthNumber == 9 || MonthNumber == 10 || MonthNumber == 11)
     {
-        std::cout << "Autumn";
+        std::cout << "Autumn \n";
     }
 
     //Fifth task 
