@@ -3,15 +3,35 @@
 #include <algorithm>
 
 //Game rules
-static int Compare(char a, char b)
+
+enum class RoundResult
 {
-    if (a == 'r' && b == 's') return 1;
-    if (a == 's' && b == 'r') return 0;
-    if (a == 'p' && b == 'r') return 1;
-    if (a == 'r' && b == 'p') return 0;
-    if (a == 's' && b == 'p') return 1;
-    if (a == 'p' && b == 's') return 0;
-    if (a == b) return 2;
+    Loss,
+    Win,
+    Draw
+};
+
+static RoundResult Compare(char a, char b)
+{
+    if (a == 'r' && b == 's') return RoundResult::Win;
+    if (a == 's' && b == 'r') return RoundResult::Loss;
+    if (a == 'p' && b == 'r') return RoundResult::Win;
+    if (a == 'r' && b == 'p') return RoundResult::Loss;
+    if (a == 's' && b == 'p') return RoundResult::Win;
+    if (a == 'p' && b == 's') return RoundResult::Loss;
+    if (a == b) return RoundResult::Draw;
+}
+
+char GenerateChoice()
+{
+    int GenRange = 3;
+    const int GenNum = std::rand() % (GenRange);
+    switch (GenNum)
+    {
+    case 0: return 'r';
+    case 1: return 's';
+    case 2: return 'p';
+    }
 }
 
 int main()
@@ -47,37 +67,26 @@ int main()
             std::cout << "Your choice is " << PlayerChoice << std::endl;
 
             //Game's turn
-            const int GenNum = std::rand() % (GenRange);
-            if (GenNum == 0)
-            {
-                GameChoice = 'r';
-            }
-            else if (GenNum == 1)
-            {
-                GameChoice = 'p';
-            }
-            else
-            {
-                GameChoice = 's';
-            }
+            GameChoice = GenerateChoice();
 
             std::cout << "Game choice is " << GameChoice << std::endl;
 
             //Deciding a result of a round
-            if (Compare(PlayerChoice, GameChoice) == 1)
+            RoundResult result = (Compare(PlayerChoice, GameChoice));
+            switch (result)
             {
+            case RoundResult::Win:
                 std::cout << "You WON \n\n";
-                WinCounter = WinCounter + 1;
-            }
-            else if (Compare(PlayerChoice, GameChoice) == 0)
-            {
+                WinCounter += 1;
+                break;
+            case RoundResult::Loss:
                 std::cout << "You LOST \n\n";
-                LossCounter = LossCounter + 1;
-            }
-            else
-            {
+                LossCounter += 1;
+                break;
+            case RoundResult::Draw:
                 std::cout << "DRAW \n\n";
-                DrawCounter = DrawCounter + 1;
+                DrawCounter += 1;
+                break;
             }
         }
         //Calculating game result
