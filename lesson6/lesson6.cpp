@@ -4,32 +4,32 @@
 int main()
 {   
     //First Task
-    int a1 = 0;
-    int d = 0;
+    int FirstNumber = 0;
+    int ProgStep = 0;
     unsigned int n = 0;
-    int InputN = 0;
+    int ProgMembers = 0;
 
     std::cout << "Enter first progression number: ";
-    std::cin >> a1;
+    std::cin >> FirstNumber;
     std::cout << "Enter progression step: ";
-    std::cin >> d;
+    std::cin >> ProgStep;
     do
     {
         std::cout << "Enter number of members in progression: ";
-        std::cin >> InputN;
-        if (InputN <= 0)
+        std::cin >> ProgMembers;
+        if (ProgMembers <= 0)
         {
             std::cout << "Please, use positive integer! \n";
         }
         else
         {
-            n = static_cast<unsigned int>(InputN);
+            n = static_cast<unsigned int>(ProgMembers);
         } 
-    } while (InputN <= 0);
+    } while (ProgMembers <= 0);
 
     for (int i = 1; i <= n; i++)
     {
-        std::cout << a1 + (i - 1) * d << ", ";
+        std::cout << FirstNumber + (i - 1) * ProgStep << ", ";
     }
     std::cout << std::endl << std::endl;
     
@@ -129,7 +129,7 @@ int main()
     int Sum = 0;
     while (true)
     {
-        std::cout << "Enter your symbol: ";
+        std::cout << "Enter your symbol('.' for exit): ";
         std::cin >> MySymbol;
         if (islower(MySymbol))
         {
@@ -178,14 +178,12 @@ int main()
 
     //Fifth task
     unsigned int UserInput = 0;
-    unsigned int FirstNumber = 1;
     unsigned int Factorial = 1;
     std::cout << "Enter value for calculating factorial: ";
     std::cin >> UserInput;
     for (int i = 1; i <= UserInput; i++)
     {
-        Factorial = Factorial * FirstNumber;
-        FirstNumber = FirstNumber + 1;
+        Factorial *= i;
     }
     std::cout << Factorial << std::endl;
     return 0;
