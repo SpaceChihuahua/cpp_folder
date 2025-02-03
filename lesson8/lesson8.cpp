@@ -35,12 +35,10 @@ void CountNumbers(int Count)
 
 int FactorialCycle(int NumberForCycle)
 {
-    int FirstNumber = 1;
     int Factorial = 1;
-    for (int i = 1; i <= NumberForCycle; i++)
+    for (int i = 2; i <= NumberForCycle; i++)
     {
-        Factorial = Factorial * FirstNumber;
-        ++FirstNumber;
+        Factorial *= i;
     }
     return Factorial;
 }
