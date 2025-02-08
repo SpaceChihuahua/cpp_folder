@@ -45,14 +45,11 @@ int FactorialCycle(int NumberForCycle)
 
 int FactorialRecursion(int NumberForRecursion)
 {
-    if (NumberForRecursion == 0)
+    if (NumberForRecursion <= 1)
     {
         return 1;
     }
-    else
-    {
-        return NumberForRecursion * FactorialRecursion(NumberForRecursion - 1);
-    }
+    return NumberForRecursion * FactorialRecursion(NumberForRecursion - 1);
 }
 
 float GetArea(float Radius)
