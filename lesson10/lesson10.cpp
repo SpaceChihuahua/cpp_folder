@@ -2,19 +2,15 @@
 
 void swapPtr(int& a, int& b)
 {
-    int* ptrToA = &a;
-    int* ptrToB = &b;
     int i = a; //store variable 'a' initial value before it is changed
-    *ptrToA = b;
-    *ptrToB = i;
+    a = b;
+    b = i;
 }
 
 void swapRef(int* a, int* b)
 {
-    int& refToA = *a;
-    int& refToB = *b;
-    int i = refToA; //store variable 'a' initial value before it is changed
-    *a = refToB;
+    int i = *a; //store variable 'a' initial value before it is changed
+    *a = *b;
     *b = i;  
 }
 
